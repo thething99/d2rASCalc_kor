@@ -1,11 +1,20 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <!DOCTYPE html><HTML class="ingameBar--is-delivered"><HEAD><META 
+
 content="IE=9.0000" http-equiv="X-UA-Compatible">
 
+
+
 <META charset="utf-8"> 
+
 <META name="viewport" content="width=device-width, user-scalable=0"> 
+
 <TITLE>디아블로2 레저렉션 공속 계산기</TITLE> 
+
 <SCRIPT src="Diablo%202R%20Attack%20Speed%20Calculator%20%20ias%20calc_files/main.htm" type="text/javascript" charset="UTF-8"></SCRIPT>
+
+
 
 <STYLE>
   .ingame {
@@ -162,20 +171,20 @@ content="IE=9.0000" http-equiv="X-UA-Compatible">
 
   .h1,
   h1:not(.unstyled) {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    line-height: 4.2rem;
+    line-height: 1.2rem;
     margin-bottom: 2.8rem;
-    margin-top: 3rem
+    margin-top: 1.0rem
   }
 
   .h3,
   h3:not(.unstyled) {
-    font-size: 2.625rem;
+    font-size: 1.925rem;
     font-weight: 700;
-    line-height: 3.15rem;
-    margin-bottom: 2.1rem;
-    margin-top: 2.25rem
+    line-height: 1.7rem;
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem
   }
 
   ul {
@@ -1073,15 +1082,25 @@ content="IE=9.0000" http-equiv="X-UA-Compatible">
     font-weight: 400
   }
 </STYLE>
+
  
+
 <META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
+
 <BODY>
+
 <DIV class="sticky-wrapper">
+
 <DIV class="row">
+
 <DIV class="col-24"><main id="main"><SECTION class="cf pb20" id="content">
+
 <DIV class="row pr z1">
+
 <DIV class="col-16"><ARTICLE class="item box cf">
-<H3>디아블로2레져렉션 공속 계산기(TTmod)</H3>
+
+<H1>디아블로2레저렉션 공속 계산기(TTmod)</H1>
+
 <SCRIPT>
 var frames;
 var start;
@@ -1174,7 +1193,7 @@ function berechneFPA(FramesPerDirection, Acceleration, StartingFrame) {
     if (cap == 1) {
         document.myform.AnzMax.value = "";
         if ((fertigkeiten[document.myform.skill.value][4] == 100) && (fertigkeiten[document.myform.skill.value][2] != 1) && (FPA <= FPAmax)) {
-            document.myform.AnzMax.value = "Further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
     }
     return FPA;
@@ -1234,13 +1253,13 @@ function berechneWerte() {
         if (document.myform.zweitwaffe.value > 0) {
             temp = ergebnis;
             ergebnis = berechneFPA(12, acceleration2, 0);
-            if (ergebnis > berechneFPA(12, 256, 0)) {
+            if (ergebnis > berechneFPA(12, 317, 0)) { //256
                 grenze = 0;
             }
             ergebnis = (ergebnis + temp) / 2;
         }
         if (grenze == 1) {
-            document.myform.AnzMax.value = "further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
         grenze = 1;
     }
@@ -1297,7 +1316,7 @@ function berechneWerte() {
         }
         if (document.myform.waffe.value == 0) {
             ergebnis = 10;
-            document.myform.AnzMax.value = "further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
         if (document.myform.zweitwaffe.value > 0) {
             temp2 = ergebnis;
@@ -1314,7 +1333,7 @@ function berechneWerte() {
             ergebnis = (ergebnis + temp2) / 4;
         }
         if (grenze == 1) {
-            document.myform.AnzMax.value = "further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
         grenze = 1;
     }
@@ -1324,10 +1343,10 @@ function berechneWerte() {
             rollback1++;
             rollback3 = berechneFPA(13, acceleration, 0);
             if (rollback3 == 4) {
-                document.myform.AnzMax.value = "further IAS useless";
+                document.myform.AnzMax.value = "최대 공속";
             }
-            document.myform.AnzFPA.value = rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback3 + " frames per attack";
-            document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 * 4 + rollback3) / 5)) / 100 + " attacks per second";
+            document.myform.AnzFPA.value = rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback3 + " 프레임/1회 공격";
+            document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 * 4 + rollback3) / 5)) / 100 + "회/1초";
         }
         if (document.myform.skill.value == 29) {
             frames = waffengattung[waffen[document.myform.waffe.value][2]][document.myform.char.value][0];
@@ -1341,11 +1360,11 @@ function berechneWerte() {
                 grenze = 0;
             }
             if (grenze == 1) {
-                document.myform.AnzMax.value = "further IAS useless";
+                document.myform.AnzMax.value = "최대 공속";
             }
             grenze = 1;
-            document.myform.AnzFPA.value = rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback3 + " frames per attack";
-            document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 * 4 + rollback3) / 5)) / 100 + " attacks per second";
+            document.myform.AnzFPA.value = rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback1 + "/" + rollback3 + " 프레임/1회 공격";
+            document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 * 4 + rollback3) / 5)) / 100 + "회/1초";
         }
         if (document.myform.skill.value == 24) {
             frames = aktionsframe[waffen[document.myform.waffe.value][2]][document.myform.char.value];
@@ -1371,12 +1390,12 @@ function berechneWerte() {
                 grenze = 0;
             }
             if (grenze == 1) {
-                document.myform.AnzMax.value = "further IAS useless";
+                document.myform.AnzMax.value = "최대 공속";
             }
             grenze = 1;
-            document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback2 + "/" + rollback2 + "/" + rollback3 + " frames per attack";
+            document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback2 + "/" + rollback2 + "/" + rollback3 + " 프레임/1회 공격";
             if (document.myform.skill.value == 24) {
-                document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 * 3 + rollback3) / 5)) / 100 + " attacks per second";
+                document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 * 3 + rollback3) / 5)) / 100 + "회/1초";
             }
         }
     }
@@ -1419,11 +1438,11 @@ function berechneWerte() {
             rollback5 = 13;
         }
         if (grenze == 1) {
-            document.myform.AnzMax.value = "further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
         grenze = 1;
-        document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback3 + "/" + rollback4 + "/" + rollback5 + " frames per attack";
-        document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 + rollback3 * 4 + rollback4 * 3 + rollback5) / 10)) / 100 + " attacks per second";
+        document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback3 + "/" + rollback4 + "/" + rollback5 + " 프레임/1회 공격";
+        document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 + rollback3 * 4 + rollback4 * 3 + rollback5) / 10)) / 100 + "회/1초";
     }
     if (fertigkeiten[document.myform.skill.value][4] == 40) {
         frames = aktionsframe[waffen[document.myform.waffe.value][2]][document.myform.char.value];
@@ -1445,20 +1464,24 @@ function berechneWerte() {
             grenze = 0;
         }
         if (grenze == 1) {
-            document.myform.AnzMax.value = "further IAS useless";
+            document.myform.AnzMax.value = "최대 공속";
         }
         grenze = 1;
-        document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback3 + " frames per attack";
-        document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 + rollback3) / 2)) / 100 + " attacks per second";
+        document.myform.AnzFPA.value = rollback1 + "/" + rollback2 + "/" + rollback3 + " 프레임/1회 공격";
+        document.myform.AnzFre.value = parseInt(100 * 25 / ((rollback1 + rollback2 + rollback3) / 2)) / 100 + "회/1초";
     }
     if (fertigkeiten[document.myform.skill.value][4] == 100) {
-        document.myform.AnzFPA.value = ergebnis + " frames per attack"; //standard att
-        document.myform.AnzFre.value = parseInt(100 * 25 / ergebnis) / 100 + " attacks per second";
+        document.myform.AnzFPA.value = ergebnis + " 프레임/1회 공격"; //standard att
+		//
+		if (ergebnis == 1) {
+			document.myform.AnzMax.value = "공격 불가";
+		}
+        document.myform.AnzFre.value = parseInt(100 * 25 / ergebnis) / 100 + "회/1초";
         if (document.myform.char.value > 6) {
-            document.myform.AnzFre.value = parseInt(100 * 25 / (ergebnis + 2)) / 100 + " attacks per second";
+            document.myform.AnzFre.value = parseInt(100 * 25 / (ergebnis + 2)) / 100 + "회/1초";
         }
         if (((document.myform.char.value == 8) && (document.myform.skill.value == 3)) || ((document.myform.char.value == 9) && (document.myform.skill.value == 0))) {
-            document.myform.AnzFre.value = parseInt(100 * 25 / (ergebnis + 1)) / 100 + " attacks per second";
+            document.myform.AnzFre.value = parseInt(100 * 25 / (ergebnis + 1)) / 100 + "회/1초";
         }
         if ((document.myform.charform.value > 0) && (document.myform.zweitwaffe.value > 0) && (document.myform.skill.value == 0)) {
             document.myform.AnzFPA.value = "계산 불가";
@@ -1467,7 +1490,7 @@ function berechneWerte() {
     }
 }
 
-var horizontalLen = 44;
+var horizontalLen = 46;
 var verticalLen = 25;
 
 function berechneBreakpoints() {
@@ -1713,7 +1736,7 @@ function berechneBreakpoints() {
         }
         if (fertigkeiten[document.myform.skill.value][4] == 100) {
             for (i = 0; i < breakpoints.length; i++) {
-				if (breakpoints[i][0] < 455)// TT
+				if (breakpoints[i][0] < 345)// TT
 				{
 				
                 TabFenster.document.write('<tr><td height="30" align="center">' + breakpoints[i][0] + '</td><td align="center">' + breakpoints[i][1] + '</td><td align="center">' + parseInt(2500 / (aidel + breakpoints[i][1])) / 100 + '</td></tr>');
@@ -1722,7 +1745,7 @@ function berechneBreakpoints() {
         }
         if (fertigkeiten[document.myform.skill.value][4] != 100) {
             for (i = 0; i < breakpoints.length; i++) {
-                if (breakpoints[i][0] < 455)// TT
+                if (breakpoints[i][0] < 425)// TT
 				{
 				TabFenster.document.write('<tr><td height="30" align="center">' + breakpoints[i][0] + '</td><td align="center">' + breakpoints[i][1] + '</td><td align="center">' + breakpointsAPS[i] + '</td></tr>');
 				}
@@ -3525,101 +3548,191 @@ var waffen = [
 
 
 </SCRIPT>
+
  
+
 <FORM name="myform">
+
 <TABLE>
+
   <TBODY>
+
   <TR>
+
     <TH colSpan="2">
-      Calculration</TH></TR>
+
+      Calculation</TH></TR>
+
   <TR>
+
     <TD class="w50">직업</TD>
+
     <TD class="w50"><SELECT name="char" class="w50-10" onchange="neuChar()" 
+
       size="1">
 	  <OPTION value="0">아마존</OPTION>
 	  <OPTION value="1" selected="">암살자</OPTION>
 	  <OPTION value="2">야만용사</OPTION>
+
         <OPTION value="3">드루이드</OPTION>
-        <OPTION value="4">강령술사</OPTION>
+        <OPTION 
+value="4">강령술사</OPTION>
 		<OPTION value="5">성기사</OPTION>
 		<OPTION value="6">원소술사</OPTION>
+
          <OPTION value="7">A1 용병 - 로그</OPTION>
 		 <OPTION value="8">A2 용병 - 경비병</OPTION>
 		 <OPTION value="9">A5 용병 - 바바리안</OPTION>
 		 </SELECT>     
 	<SELECT name="charform" class="w50-10" 
+
       onchange="neuCharform()" size="1"></SELECT>     </TD></TR>
+
   <TR>
+
     <TD>주 무기<BR><SMALL><INPUT name="primaerwaffe" onchange="berechneWerte()" 
+
       type="radio"> left weapon slot</SMALL></TD>
+
     <TD><SELECT name="waffe" class="w50-10" onchange="neuWaffe()" 
+
       size="1"></SELECT>     <SELECT name="barbschwert" class="w50-10" onchange="neuBarbschwert()" 
+
       size="1"></SELECT>     </TD></TR>
+
   <TR>
+
     <TD></TD>
+
     <TD><INPUT name="infoWaffe1" type="text" size="32" readOnly="" value="Waffenlos [0]"> 
+
           </TD></TR>
+
   <TR>
+
     <TD>무기 공속<BR><SMALL>in %</SMALL></TD>
+
     <TD><SELECT name="wIAS1" onchange="berechneWerte()" size="1"></SELECT>     
+
     </TD></TR>
+
   <TR>
+
     <TD>보조 무기<BR><SMALL><INPUT name="primaerwaffe" onchange="berechneWerte()" 
+
       type="radio" CHECKED=""> left weapon slot</SMALL>     
+
     <TD><SELECT name="zweitwaffe" onchange="neuZweitwaffe()" 
+
       size="1"></SELECT>     </TD></TR>
+
   <TR>
+
     <TD></TD>
+
     <TD><INPUT name="infoWaffe2" class="info" type="text" size="32" readOnly=""> 
+
           </TD></TR>
+
   <TR>
+
     <TD>무기 공속<BR><SMALL>in %</SMALL></TD>
+
     <TD><SELECT name="wIAS2" onchange="berechneWerte()" 
+
   size="1"></SELECT></TD></TR>
+
   <TR>
+
     <TD>장비 공속<BR><SMALL>in %</SMALL></TD>
+
     <TD><SELECT name="IAS" onchange="berechneWerte()" size="1"></SELECT>     
+
       <INPUT name="IASstufen" onchange="setzeIASstufen()" type="checkbox">간격 세분화     </TD></TR>
+
   <TR>
+
     <TD>스킬</TD>
+
     <TD><SELECT name="skill" onchange="berechneWerte()" size="1"></SELECT>     
+
     </TD></TR>
+
   <TR>
+
     <TD>광신<BR><SMALL> Fanaticism Level</SMALL></TD>
+
     <TD><SELECT name="fana" onchange="berechneWerte()" size="1"><OPTION 
+
         value="0" selected="">-</OPTION>     </SELECT>     </TD></TR>
+
   <TR>
+
     <TD>광분<BR><SMALL> Frenzy Level</SMALL></TD>
+
     <TD><SELECT name="frenzy" onchange="berechneWerte()" size="1"><OPTION 
+
         value="0" selected="">-</OPTION>     </SELECT>     </TD></TR>
+
   <TR>
+
     <TD>늑대인간<BR><SMALL> Werewolf Level</SMALL></TD>
+
     <TD><SELECT name="wolf" onchange="berechneWerte()" size="1"><OPTION 
+
         value="0" selected="">-</OPTION>     </SELECT>     </TD></TR>
+
   <TR>
+
     <TD>폭발적인 속도<BR><SMALL> Burst of Speed Level</SMALL></TD>
+
     <TD><SELECT name="tempo" onchange="berechneWerte()" size="1"><OPTION 
+
         value="0" selected="">-</OPTION>     </SELECT>     </TD></TR>
+
   <TR>
-    <TD>신성한 빙결<BR><SMALL> Holy Freeze Level</SMALL></TD>
+
+    <TD>Debuffs-신성한 빙결<BR><SMALL> Holy Freeze Level</SMALL></TD>
+
     <TD><SELECT name="holyfrost" onchange="berechneWerte()" size="1"><OPTION 
+
         value="0" selected="">-</OPTION>     </SELECT>     <INPUT name="altern" 
+
       onchange="berechneWerte()" type="checkbox">노화 Decrepify</TD></TR>
+
   <TR>
+
     <TD colSpan="2"><BUTTON onclick="neuChar()">초기화</BUTTON><BUTTON 
+
       onclick="berechneBreakpoints()" type="button">공속테이블 보기</BUTTON></TD></TR>
+
   <TR>
+
     <TH colSpan="2">
+
       Result</TH></TR>
+
   <TR>
+
     <TD>공속(25프레임=1초)</TD>
+
     <TD><INPUT name="AnzFPA" class="w50-10" type="text" size="32" maxLength="2147483647" readOnly=""> 
+
           <INPUT name="AnzMax" class="w50-10" type="text" size="32" maxLength="2147483647" readOnly=""> 
+
           </TD></TR>
+
   <TR>
+
     <TD>초당 공격 횟수</TD>
+
     <TD><INPUT name="AnzFre" class="daten" type="text" size="32" maxLength="2147483647" readOnly=""></TD></TR></TBODY></TABLE></FORM>
+
 <SCRIPT>neuChar(document.myform);</SCRIPT>
+
 	 <I>credit to ingame.de for the calc. https://d2.lc/IAS/</I><BR><I>2021.10.18 
+
 Modified by TheThing</I>                   
+
 </ARTICLE></DIV></DIV></SECTION></main></DIV></DIV></DIV></BODY></HTML>
+
