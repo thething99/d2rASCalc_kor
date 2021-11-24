@@ -2756,8 +2756,17 @@ function IASabstufung() {
     statischIAS = true;
     if (mIAS == 1) {
         mIAS = 5;
+		if (!document.myform.IASstufen1.checked) {
+			document.myform.IASstufen1.checked=true;
+		} 
+		if (!document.myform.IASstufen2.checked) {
+
+			document.myform.IASstufen2.checked=true;
+		}			
     } else {
         mIAS = 1;
+		document.myform.IASstufen1.checked=false;
+		document.myform.IASstufen2.checked=false;
     }
     setzeIAS();
 }
